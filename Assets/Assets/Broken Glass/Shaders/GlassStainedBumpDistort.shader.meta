@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 963484209d11fd7f110076aa44295342
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 97573
+  packageName: Broken Glass VR
+  packageVersion: 1.2
+  assetPath: Assets/Broken Glass VR/Shaders/GlassStainedBumpDistort.shader
+  uploadId: 200024

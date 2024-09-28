@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 26f962d1c27c42f43a025a3678e3ba8a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 118355
+  packageName: Polygonal's Low-Poly Particle Pack
+  packageVersion: 1.0
+  assetPath: Assets/Polygonal Particles/Assets/Prefabs/Environment/Bubbles.prefab
+  uploadId: 245436

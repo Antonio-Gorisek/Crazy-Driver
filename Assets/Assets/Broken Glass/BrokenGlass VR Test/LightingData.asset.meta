@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cf6d2a6b390d19d4aa59ae966b8b74ee
+timeCreated: 1502286442
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 97573
+  packageName: Broken Glass VR
+  packageVersion: 1.2
+  assetPath: Assets/Broken Glass VR/BrokenGlass VR Test/LightingData.asset
+  uploadId: 200024

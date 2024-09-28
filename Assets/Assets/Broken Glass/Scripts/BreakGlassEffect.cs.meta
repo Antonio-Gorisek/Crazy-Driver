@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: df92a0f8ff9ab4444a70551e4a045d11
+timeCreated: 1502282261
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 97573
+  packageName: Broken Glass VR
+  packageVersion: 1.2
+  assetPath: Assets/Broken Glass VR/Scripts/brokenGlassVR.cs
+  uploadId: 200024

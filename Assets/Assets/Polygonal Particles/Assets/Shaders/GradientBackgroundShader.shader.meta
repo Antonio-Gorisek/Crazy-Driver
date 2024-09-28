@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: bc41b2ff9b3614a4aad28d468f59e950
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 118355
+  packageName: Polygonal's Low-Poly Particle Pack
+  packageVersion: 1.0
+  assetPath: Assets/Polygonal Particles/Assets/Shaders/GradientBackgroundShader.shader
+  uploadId: 245436

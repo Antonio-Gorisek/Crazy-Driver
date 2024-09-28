@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7501ef39493cde44bb063fb07f38e96d
+timeCreated: 1502280989
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 97573
+  packageName: Broken Glass VR
+  packageVersion: 1.2
+  assetPath: Assets/Broken Glass VR/BrokenGlass VR.prefab
+  uploadId: 200024
