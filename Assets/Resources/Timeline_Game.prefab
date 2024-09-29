@@ -7824,7 +7824,6 @@ GameObject:
   - component: {fileID: 1801594597449925225}
   - component: {fileID: 4190806264624390034}
   - component: {fileID: 1770793051717767383}
-  - component: {fileID: 9072964309912630104}
   m_Layer: 3
   m_Name: Camera
   m_TagString: Untagged
@@ -7929,22 +7928,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &9072964309912630104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3570957493284080142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ab8353b5ebd32545867da143199a814, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DefaultPosInfluence: {x: 0.15, y: 0.15, z: 0.15}
-  DefaultRotInfluence: {x: 1, y: 1, z: 1}
-  RestPositionOffset: {x: -0.000001430511, y: 4.370005, z: -7.619972}
-  RestRotationOffset: {x: 15, y: 0, z: 0}
 --- !u!1 &3780987340398573058
 GameObject:
   m_ObjectHideFlags: 0
