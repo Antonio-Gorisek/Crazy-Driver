@@ -18,7 +18,7 @@ public class MoveForward : MonoBehaviour
     }
 
     private void Update() {
-        if (_crashedDisableMove || GameManager.Instance.isGameOver())
+        if (_crashedDisableMove || !GameManager.Instance.isGameStarted() || GameManager.Instance.isGameOver())
             return;
 
         if (startWhenPlayerIsNear == true && IsPlayerNear() == false)
