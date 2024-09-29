@@ -7,7 +7,8 @@
 
 This game was created purely for fun, as a challenge developed in a short period of time. The goal is to survive as long as possible while avoiding various obstacles and escaping the police who are constantly chasing you. The game’s speed increases over time, adding more tension and testing your reflexes.
 
-Before downloading the project, you can try the playtest directly on the web, <a href="https://antonio-gorisek.itch.io/crazy-driver">click here</a>.
+Before downloading the project, you can try the playtest directly on the web, <a href="https://antonio-gorisek.itch.io/crazy-driver">click here</a>.<br>
+The game is also available for download on Windows, macOS, Linux, and Android. You can <a href="https://antonio-gorisek.itch.io/crazy-driver-download">click here</a> to access it.
 
 ### Key Features:
 - **Simple controls:** Intuitive and quick controls.
