@@ -1958,7 +1958,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 5741195651885486059}
         m_TargetAssemblyTypeName: Vehicle, Assembly-CSharp
-        m_MethodName: DecelerateVehicle
+        m_MethodName: ToggleAccelerate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7614,7 +7614,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 5741195651885486059}
         m_TargetAssemblyTypeName: Vehicle, Assembly-CSharp
-        m_MethodName: AccelerateVehicle
+        m_MethodName: ToggleAccelerate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

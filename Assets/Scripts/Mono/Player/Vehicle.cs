@@ -93,29 +93,34 @@ public class Vehicle : VehicleHealth
 
     private float GetScreenInput()
     {
+        // Check for touch input
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
             float screenWidth = Screen.width;
 
-            // Check if the touch is on the UI
-            if (EventSystem.current.IsPointerOverGameObject(touch.fingerId) && GameManager.Instance.isGameStarted())
+            // Use Raycast to detect if touch is over a UI element
+            if (IsTouchOverUI(touch) && _firstMove == true)
                 return 0f; // No movement if the touch is on the UI
 
-            if (touch.position.x < screenWidth / 2)
-                return 1f; // Move left
-            else if (touch.position.x > screenWidth / 2)
-                return -1f; // Move right
+            if (touch.phase == TouchPhase.Began)
+            {
+                if (touch.position.x < screenWidth / 2)
+                    return 1f; // Move left
+                else if (touch.position.x > screenWidth / 2)
+                    return -1f; // Move right
+            }
         }
 
+        // Check for mouse input
         if (Input.GetMouseButton(0))
         {
             float mousePositionX = Input.mousePosition.x;
             float screenWidth = Screen.width;
 
-            // Check if the touch is on the UI
-            if (EventSystem.current.IsPointerOverGameObject() && GameManager.Instance.isGameStarted())
-                return 0f; // No movement if the touch is on the UI
+            // Standard check for mouse (PC)
+            if (EventSystem.current.IsPointerOverGameObject() && _firstMove)
+                return 0f; // No movement if the mouse click is on the UI
 
             if (mousePositionX < screenWidth / 2)
                 return 1f; // Move left
@@ -124,6 +129,20 @@ public class Vehicle : VehicleHealth
         }
 
         return 0f; // No input
+    }
+
+    // Method to check if the touch is over a UI element
+    private bool IsTouchOverUI(Touch touch)
+    {
+        PointerEventData pointerData = new PointerEventData(EventSystem.current)
+        {
+            position = touch.position
+        };
+
+        List<RaycastResult> raycastResults = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(pointerData, raycastResults);
+
+        return raycastResults.Count > 0;
     }
 
     private float GetKeyboardInput() => -Input.GetAxis("Horizontal");
@@ -162,7 +181,6 @@ public class Vehicle : VehicleHealth
         // Scale the volume proportionally between minVolume and maxVolume
         float volume = Mathf.Lerp(minVolume, maxVolume, Mathf.Clamp01(policeDanger / maxDanger));
         GetComponent<AudioSource>().volume = volume;
-
         if (policeDanger >= maxDanger)
         {
             OnVehicleBusted();
@@ -173,9 +191,9 @@ public class Vehicle : VehicleHealth
     {
         VehicleCrashed();
         _bustedAnimation.SetActive(true);
-        _imageEndGame.sprite = Resources.Load<Sprite>("Images/Busted");
         GameManager.Instance.GameOver();
         AudioManager.StopAudioClip("Background");
+        _imageEndGame.sprite = Resources.Load<Sprite>("Images/Busted");
     }
 
     private void ClampPosition()
@@ -184,35 +202,23 @@ public class Vehicle : VehicleHealth
         _rb.position = new Vector3(_rb.position.x, _rb.position.y, clampedZ);
     }
 
-    private void ToggleAccelerate()
+    public void ToggleAccelerate()
     {
         if (isChangingSpeed) return; // If speed is currently changing, do not allow toggle
 
         if (isAccelerating)
         {
             // If currently accelerating, decelerate
-            DecelerateVehicle();
+            StartCoroutine(DecelerateCoroutine());
         }
         else
         {
             // If currently decelerating, accelerate back to previous speed
-            AccelerateVehicle();
+            StartCoroutine(AccelerateCoroutine());
         }
 
         // Toggle the state
         isAccelerating = !isAccelerating;
-    }
-
-    // Gradually decelerate the vehicle
-    public void DecelerateVehicle()
-    {
-        StartCoroutine(DecelerateCoroutine());
-    }
-
-    // Gradually accelerate the vehicle back to previous speed
-    public void AccelerateVehicle()
-    {
-        StartCoroutine(AccelerateCoroutine());
     }
 
     private IEnumerator DecelerateCoroutine()

@@ -1,5 +1,6 @@
 using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -17,6 +18,8 @@ public class GameManager : Singleton<GameManager>
     private bool gameStarted = false;
     private bool gameOver = false;
 
+    private Vector2 _initialTouchPosition;
+
     /// <summary>
     /// Loads the image to inform the player about the action needed to start the game.
     /// On mobile, it will display "Tap the screen" and on PC, it will display "Press space".
@@ -33,9 +36,29 @@ public class GameManager : Singleton<GameManager>
             return;
 
         // Check for player input to start the cutscene
-        if (Input.GetKeyDown(KeyCode.Space) || Input.touchCount > 0)
+        if (Input.touchCount > 0)
+        {
+            // To prevent accidental triggering of the cutscene, especially
+            // on phones where users might unintentionally perform a "slide" gesture when exiting the game, 
+            // it's important to detect only a "tap".
+            Touch touch = Input.GetTouch(0);
+
+            if (touch.phase == TouchPhase.Began)
+                _initialTouchPosition = touch.position;
+
+            if (touch.phase == TouchPhase.Ended && Vector2.Distance(_initialTouchPosition, touch.position) < 50)
+                StartingCutscene();
+        }
+
+        // Check for player input to start the cutscene
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             StartingCutscene();
+        }
+
+        if(CheckForExitInput()) 
+        { 
+            ExitGame(); 
         }
     }
 
@@ -67,6 +90,23 @@ public class GameManager : Singleton<GameManager>
     {
         Debug.Log("Restart game started...");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    /// <summary>
+    /// Check for PC and Mobile device
+    /// </summary>
+    private bool CheckForExitInput()
+    {
+        return Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Return);
+    }
+
+    private void ExitGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#elif UNITY_STANDALONE || UNITY_IOS || UNITY_ANDROID
+            Application.Quit();
+#endif
     }
 
     /// <summary>
