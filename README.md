@@ -24,6 +24,10 @@ All assets used in the game are free to use, and the entire project can be utili
 Whether you're a developer looking to learn, build on top of this project, or simply interested in its mechanics, you're free to do so for any purpose.
 
 ## Also available on
+<a href="https://antonio-gorisek.itch.io/crazy-driver" target="_blank">
+  <img src="https://static.itch.io/images/badge-color.svg" alt="App Screenshot" width="170" />
+</a>
+&nbsp;&nbsp;&nbsp;
 <a href="https://play.google.com/store/apps/details?id=com.Indigo.CrazyDriver" target="_blank">
   <img src="https://i.imgur.com/TOZhhxX.png" alt="App Screenshot" width="170" />
 </a>
