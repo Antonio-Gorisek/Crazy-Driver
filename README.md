@@ -29,7 +29,7 @@ Whether you're a developer looking to learn, build on top of this project, or si
 </a>
 &nbsp;&nbsp;&nbsp;
 <a href="https://play.google.com/store/apps/details?id=com.Indigo.CrazyDriver" target="_blank">
-  <img src="https://i.imgur.com/TOZhhxX.png" alt="App Screenshot" width="170" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/1280px-Google_Play_Store_badge_EN.svg.png" alt="App Screenshot" width="170" />
 </a>
 
 
