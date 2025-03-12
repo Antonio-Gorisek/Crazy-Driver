@@ -50,4 +50,4 @@ Whether you're a developer looking to learn, build on top of this project, or si
 
 ## License
 
-This project is licensed under the [MIT License](https://github.com/Antonio-Gorisek/CrazyDriver/blob/main/LICENSE), meaning you are free to use, modify, and distribute the project with minimal restrictions. You can incorporate it into your own projects, whether for personal, educational, or commercial purposes. The only requirement is that you include the original license in any substantial copies of the project.
+This project is licensed under the [MIT License](https://github.com/Antonio-Gorisek/Crazy-Driver/blob/main/LICENSE), meaning you are free to use, modify, and distribute the project with minimal restrictions. You can incorporate it into your own projects, whether for personal, educational, or commercial purposes. The only requirement is that you include the original license in any substantial copies of the project.
